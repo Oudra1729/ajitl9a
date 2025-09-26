@@ -62,20 +62,20 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className="min-h-screen flex items-center justify-center bg-[#f9fafc] py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-xl w-full bg-white shadow-lg rounded-xl p-10 space-y-6">
         <div>
           <div className="flex justify-center">
-            <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">L&F</span>
-            </div>
+            {/* <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center">
+              <span className="text-gray-900 font-bold text-xl">L&F</span>
+            </div> */}
           </div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-[#1b1b1b]">
+            Sign in
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
+          <p className="mt-3 text-center text-sm font-serif text-gray-600">
             Or{' '}
-            <Link to="/signup" className="font-medium text-primary-600 hover:text-primary-500">
+            <Link to="/signup" className="font-medium font-serif text-[#7451eb] hover:text-[#7451eb]">
               create a new account
             </Link>
           </p>
@@ -94,8 +94,8 @@ const Login = ({ onLogin }) => {
                 autoComplete="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`mt-1 input-field ${errors.email ? 'border-red-300 focus:ring-red-500' : ''}`}
-                placeholder="Enter your email"
+                className={`mt-1 input-field ${errors.email ? 'border-red-300 focus:ring-red-500 bg-[#f0f4f6] w-full border rounded-md p-2.5 outline-1 outline-[#7451eb] focus:ring-primary-500' : 'bg-[#f0f4f6] w-full border border-[#80a5b7] rounded-md p-2.5 outline-1 outline-[#7451eb] focus:ring-primary-500'}`}
+                placeholder="Your email address"
               />
               {errors.email && (
                 <p className="mt-1 text-sm text-red-600">{errors.email}</p>
@@ -113,8 +113,8 @@ const Login = ({ onLogin }) => {
                 autoComplete="current-password"
                 value={formData.password}
                 onChange={handleChange}
-                className={`mt-1 input-field ${errors.password ? 'border-red-300 focus:ring-red-500' : ''}`}
-                placeholder="Enter your password"
+                className={`mt-1 input-field ${errors.password ? 'border-red-300 focus:ring-red-500 bg-[#f0f4f6] w-full border  rounded-md p-2.5 outline-1 outline-[#7451eb] focus:ring-primary-500' : 'bg-[#f0f4f6] w-full border border-[#80a5b7] rounded-md p-2.5 outline-1 outline-[#7451eb] focus:ring-primary-500'}`}
+                placeholder="Your password"
               />
               {errors.password && (
                 <p className="mt-1 text-sm text-red-600">{errors.password}</p>
@@ -128,16 +128,16 @@ const Login = ({ onLogin }) => {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
+                className="h-4 w-4 bg-green-500 text-[#7451eb] focus:ring-primary-500 border-[#80a5b7]"
               />
-              <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
+              <label htmlFor="remember-me" className="ml-2 font-medium block text-sm text-gray-900">
                 Remember me
               </label>
             </div>
 
             <div className="text-sm">
-              <a href="#" className="font-medium text-primary-600 hover:text-primary-500">
-                Forgot your password?
+              <a href="#" className="font-medium text-[#7451eb] hover:text-[#5b29ff]">
+                Forgot password?
               </a>
             </div>
           </div>
@@ -145,7 +145,7 @@ const Login = ({ onLogin }) => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full btn-primary bg-gradient-to-t from-[#7451eb] to-[#a68ff7] border border-[#4e1def] p-2 rounded-md text-white font-bold disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gradient-to-t hover:from-[#fff] hover:to-[#f6f2f6] hover:border-[#7451eb] hover:shadow-md transition duration-300 hover:text-[#7451eb]"
           >
             {isLoading ? (
               <div className="flex items-center justify-center">
