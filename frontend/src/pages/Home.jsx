@@ -1,17 +1,17 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from '../components/Common/SearchBar';
 import ItemCard from '../components/Common/ItemCard';
 import { dummyItems } from '../data/dummyData';
 
 const Home = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  // const [searchQuery, setSearchQuery] = useState('');
 
-  const handleSearch = (query) => {
-    setSearchQuery(query);
-    // In a real app, you would navigate to search results or filter items
-    console.log('Searching for:', query);
-  };
+  // const handleSearch = (query) => {
+  //   setSearchQuery(query);
+  //   // In a real app, you would navigate to search results or filter items
+  //   console.log('Searching for:', query);
+  // };
 
   const recentItems = dummyItems.slice(0, 6); // Show 6 most recent items
 
@@ -25,37 +25,46 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-primary-600 via-primary-700 to-blue-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-          <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Lost Somethinggfff?
-              <span className="block text-yellow-400">We'll Help You Find It!</span>
+      <div className="bg-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center">
+            {/* Main Heading */}
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              Lost Something?
             </h1>
-            <p className="text-xl sm:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
-              Join our community-driven platform to reunite lost items with their owners. 
-              Post what you've lost, found, or help others find their belongings.
+            
+            {/* Subheading with highlighted text */}
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">
+              We'll Help You 
+              <span className="bg-purple-600 text-white px-4 py-2 rounded-lg inline-block ml-2">
+                Find It!
+              </span>
+            </h2>
+            
+            {/* Description text */}
+            <p className="text-gray-500 text-lg md:text-xl leading-relaxed mb-12 max-w-xl mx-auto">
+              Join our community-driven platform to reunite lost items with their owners. Post what you've lost, found, or help other find their belongings.
             </p>
             
             {/* Search Bar */}
             <div className="mb-8">
-              <SearchBar 
+              {/* <SearchBar 
                 onSearch={handleSearch}
                 placeholder="Search for lost or found items..."
-              />
+              /> */}
             </div>
-
-            {/* CTA Buttons */}
+            
+            {/* Action buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 to="/post-item"
-                className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition-colors duration-200"
+                className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200 w-full sm:w-auto"
               >
                 Post Lost/Found Item
               </Link>
               <Link
                 to="/lost-items"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary-700 font-bold py-3 px-8 rounded-lg text-lg transition-colors duration-200"
+                className="border-2 border-gray-300 hover:border-gray-400 text-gray-700 font-semibold px-8 py-3 rounded-lg transition-colors duration-200 w-full sm:w-auto"
               >
                 Browse Lost Items
               </Link>
